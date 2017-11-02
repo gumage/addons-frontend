@@ -1,12 +1,17 @@
 @import "~core/css/inc/vars";
 @import "~core/css/inc/mixins";
+@import "~ui/css/vars";
 
 .InstallButton {
   .InstallButton-button {
     white-space: nowrap;
 
     &.InstallButton-button--disabled {
-      @include disabled($button-background-color);
+      @include disabled();
+    }
+
+    .Icon {
+      margin-top: -2px;
     }
   }
 
@@ -21,8 +26,4 @@
       display: none;
     }
   }
-}
-
-.InstallButton-button .Icon-plus {
-  vertical-align: baseline;
 }

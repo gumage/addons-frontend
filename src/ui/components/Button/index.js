@@ -6,8 +6,18 @@ import PropTypes from 'prop-types';
 import Link from 'amo/components/Link';
 import log from 'core/logger';
 
+import './styles.scss';
 
-import './Button.scss';
+
+const BUTTON_TYPES = [
+  'neutral',
+  'light',
+  'action',
+  'cancel',
+  'confirm',
+  'alert',
+  'none',
+];
 
 export default class Button extends React.Component {
   static propTypes = {
@@ -15,7 +25,19 @@ export default class Button extends React.Component {
     className: PropTypes.string,
     disabled: PropTypes.boolean,
     href: PropTypes.string,
+    micro: PropTypes.boolean,
+    puffy: PropTypes.boolean,
+    // Small is an alias for micro.
+    small: PropTypes.boolean,
     to: PropTypes.string,
+    type: PropTypes.string,
+  }
+
+  static defaultProps = {
+    disabled: false,
+    micro: false,
+    puffy: false,
+    small: false,
   }
 
   render() {
@@ -23,13 +45,27 @@ export default class Button extends React.Component {
       children,
       className,
       href,
+      micro,
+      puffy,
+      small,
       to,
+      type,
       ...rest
     } = this.props;
     const props = { ...rest };
 
+    if (!type || !BUTTON_TYPES.includes(type)) {
+      throw new Error(`"${type}" supplied but that is not a valid button type`);
+    }
+
     const setClassName = (...classConfig) => {
-      return makeClassName('Button', className, ...classConfig);
+      return makeClassName(
+        'Button', `Button--${type}`, className, ...classConfig, {
+          'Button--disabled': props.disabled,
+          'Button--micro': micro || small,
+          'Button--puffy': puffy,
+        },
+      );
     };
 
     if (href || to) {

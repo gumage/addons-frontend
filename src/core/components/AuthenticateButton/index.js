@@ -34,11 +34,13 @@ type Props = {|
   logOutText?: string,
   noIcon: boolean,
   siteUser: UserType | null,
+  type?: string,
 |};
 
 export class AuthenticateButtonBase extends React.Component<Props> {
   static defaultProps = {
     noIcon: false,
+    type: 'action',
   }
 
   onClick = (event: Event) => {
@@ -67,6 +69,7 @@ export class AuthenticateButtonBase extends React.Component<Props> {
       logOutText,
       noIcon,
       siteUser,
+      type,
     } = this.props;
 
     const buttonText = siteUser ?
@@ -83,6 +86,8 @@ export class AuthenticateButtonBase extends React.Component<Props> {
         href={`#${siteUser ? 'logout' : 'login'}`}
         className={className}
         onClick={this.onClick}
+        small
+        type={type}
       >
         {noIcon ? null : <Icon name="user-dark" />}
         {buttonText}

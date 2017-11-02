@@ -222,6 +222,8 @@ export class InstallButtonBase extends React.Component {
           disabled={buttonIsDisabled}
           data-browsertheme={JSON.stringify(getThemeData(addon))}
           onClick={this.installTheme}
+          puffy
+          type="action"
         >
           <Icon name="plus" />
           {i18n.gettext('Install Theme')}
@@ -246,6 +248,8 @@ export class InstallButtonBase extends React.Component {
           href={installURL}
           prependClientApp={false}
           prependLang={false}
+          puffy
+          type="action"
         >
           <Icon name="plus" />
           {i18n.gettext('Add to Firefox')}
@@ -267,6 +271,8 @@ export class InstallButtonBase extends React.Component {
           href={installURL}
           prependClientApp={false}
           prependLang={false}
+          puffy
+          type="action"
         >
           <Icon name="plus" />
           {i18n.gettext('Add to Firefox')}

@@ -58,6 +58,7 @@ export class FlagReviewMenuBase extends React.Component<Props> {
               i18n.gettext('Log in to flag this response') :
               i18n.gettext('Log in to flag this review')
             }
+            type="none"
           />
         </ListItem>,
       ];
