@@ -8,7 +8,7 @@ import { createFakeEvent } from 'tests/unit/helpers';
 
 describe('<Button />', () => {
   function render(props = {}) {
-    return shallow(<Button {...props} />)
+    return shallow(<Button {...props} />);
   }
 
   it('renders a button', () => {
