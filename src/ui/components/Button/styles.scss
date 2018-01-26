@@ -92,11 +92,9 @@ $puffy-font-size: 15px;
   &.Button--micro:not(.Button--disabled) {
     &:hover {
       background: $background-hover;
-      // box-shadow: 0 4px 6px rgba(12, 12, 13, 0.2);
     }
 
-    &:active,
-    &:focus {
+    &:active:not(.Button--disabled) {
       background: $background-active;
       // This is not part of the Photon button spec, but without it only colour
       // is changed onClick of a button. Even as someone without colourblindness
