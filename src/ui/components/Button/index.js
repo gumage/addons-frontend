@@ -27,8 +27,6 @@ export default class Button extends React.Component {
     href: PropTypes.string,
     micro: PropTypes.boolean,
     puffy: PropTypes.boolean,
-    // Small is an alias for micro.
-    small: PropTypes.boolean,
     to: PropTypes.string,
     type: PropTypes.string,
   }
@@ -37,7 +35,6 @@ export default class Button extends React.Component {
     disabled: false,
     micro: false,
     puffy: false,
-    small: false,
   }
 
   render() {
@@ -47,7 +44,6 @@ export default class Button extends React.Component {
       href,
       micro,
       puffy,
-      small,
       to,
       type,
       ...rest
@@ -62,7 +58,7 @@ export default class Button extends React.Component {
       return makeClassName(
         'Button', `Button--${type}`, className, ...classConfig, {
           'Button--disabled': props.disabled,
-          'Button--micro': micro || small,
+          'Button--micro': micro,
           'Button--puffy': puffy,
         },
       );

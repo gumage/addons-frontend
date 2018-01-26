@@ -54,7 +54,7 @@ describe('<PaginatorLink />', () => {
     it('does not contain a link and is disabled', () => {
       const item = renderLink({ currentPage: 3, page: 3 });
 
-      expect(item).toHaveClassName('disabled');
+      expect(item).toHaveProp('disabled', true);
       expect(item.prop('to')).toEqual(undefined);
       expect(item.prop('children')).toEqual(3);
     });

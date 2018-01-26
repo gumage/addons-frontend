@@ -43,7 +43,8 @@ export default class PaginatorLink extends React.Component {
       return (
         <Button
           key={page}
-          className={makeClassName('Paginate-item', 'disabled', className)}
+          className={makeClassName('Paginate-item', className)}
+          disabled
           type="light"
         >
           {text || page}

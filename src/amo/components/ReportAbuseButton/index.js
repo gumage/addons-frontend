@@ -201,7 +201,7 @@ export class ReportAbuseButtonBase extends React.Component<Props> {
               className="ReportAbuseButton-send-report"
               disabled={sendButtonIsDisabled}
               onClick={this.sendReport}
-              small
+              micro
               type="alert"
             >
               {loading ?
