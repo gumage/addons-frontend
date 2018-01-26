@@ -1,6 +1,5 @@
 /* global document */
 import React from 'react';
-// import { Route, Router, createMemoryHistory } from 'react-router';
 
 import Paginate, { PaginateBase } from 'core/components/Paginate';
 import PaginatorLink from 'core/components/PaginatorLink';
@@ -184,46 +183,4 @@ describe('<Paginate />', () => {
     expect(firstLink).toHaveProp('pathname', pathname);
     expect(firstLink).toHaveProp('pageCount', pageCount);
   });
-
-  // it('renders the right links', () => {
-  //   const pathname = '/some-path/';
-
-  //   class PaginateWrapper extends React.Component {
-  //     render() {
-  //       const props = {
-  //         ...getRenderProps(),
-  //         count: 250,
-  //         currentPage: 5,
-  //         showPages: 5,
-  //         pathname,
-  //       };
-  //       return <Paginate {...props} />;
-  //     }
-  //   }
-
-  //   function renderPaginateRoute() {
-  //     return new Promise((resolve) => {
-  //       const node = document.createElement('div');
-  //       render((
-  //         <Router history={createMemoryHistory('/')}>
-  //           <Route path="/" component={PaginateWrapper} />
-  //         </Router>
-  //       ), node, () => {
-  //         resolve(node);
-  //       });
-  //     });
-  //   }
-
-  //   return renderPaginateRoute().then((root) => {
-  //     const links = Array.from(root.querySelectorAll('a'));
-  //     expect(links.map((link) => [link.textContent, link.getAttribute('href')])).toEqual([
-  //       ['Previous', '/some-path/?page=4'],
-  //       ['3', '/some-path/?page=3'],
-  //       ['4', '/some-path/?page=4'],
-  //       ['6', '/some-path/?page=6'],
-  //       ['7', '/some-path/?page=7'],
-  //       ['Next', '/some-path/?page=6'],
-  //     ]);
-  //   });
-  // });
 });
